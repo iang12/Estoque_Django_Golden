@@ -1,0 +1,20 @@
+{% for categoria in categorias  %}
+<tr>
+    <td>{{forloop.counter}}</td>
+    <td><a href="">{{categoria.categoria}}</a></td>
+    <td class="text-center">{{categoria.produto_set.count}}</td>
+    <td class="text-center">{{categoria.criado}}</td>
+    <td class="text-center">
+        <a type="button"class="btn btn-warning btn-sm ">
+            <span class="glyphicon glyphicon-pencil"></span> Editar
+        </a>
+        <a type="button"class="btn btn-danger btn-sm ">
+            <span class="glyphicon glyphicon-trash"></span> Excluir
+        </a>
+	</td>
+</tr>
+{% empty %}
+    <tr>
+        <td colspan="7" class="text-center bg-warning"><b> Sem Categorias Cadastradas</b></td>
+    </tr>
+{% endfor %}

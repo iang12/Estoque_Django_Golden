@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<!-- Basic Examples -->
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Ordem De Serviços<i class="material-icons">people</i> 
+                </h2>
+                
+            <a type="button"href="/os/add/" class="btn bg-pink btn-circle-lg waves-effect waves-circle waves-float pull-right bt">
+                <i class="material-icons">add</i>
+            </a>
+             <style>
+                 .bt{
+                    margin-top: -35px;
+                 }
+             </style>
+                
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    {% if messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            {% for m in messages %}
+                                {{ m }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                       <thead>
+                            <tr>
+                                <th>Nª</th>
+                                <th><i class="fa fa-user" aria-hidden="true"></i> Cliente</th>
+                                <th><i class="fa fa-vcard-o"aria-hidden="true"></i>Tipo/Serviço</th>
+                                <th><i class="fa fa-calendar"aria-hidden="true"></i> Status</th>
+                                 <th><i class="fa fa-calendar"aria-hidden="true"></i> Data Entrega</th>
+                                <th><i class="fa fa-cog" aria-hidden="true"></i> Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for os in os_serv %}
+                            <tr>
+                                <th scope="row">{{forloop.counter}}</th>
+                                <td><a href="">{{os.clientes}}</a></td>
+                                <td><a href="">{{os.tipo_servivo}}</a></td>
+                                <td>{{os.status_servico}}</td>
+                                <td>{{os.data_entrega|date:"d/m/Y"}}</td>
+                                <td class="text-center">
+                                <a href=""type="button"class="btn btn-warning btn-sm">
+                                    <i class="fa fa-pencil-square-o"aria-hidden="true"></i>
+                                </a>
+                                <a type="button"class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display"> <b>Adicionar Uma Nova Categoria</b></h2>
+        </div>
+        <div class="card-block">
+            <div class="container">
+                <form action="" class="form-horizontal" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                     <div class="col-md-3">
+                            
+                        </div>
+                         <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.categoria.label}}</label>
+                                {{form.categoria}}
+                                {{form.categoria.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                           
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 "style="margin-top: 50px">
+                        </div>
+                        <div class="col-md-4 "style="margin-top: 50px">
+                            <a class="btn btn-danger" href=""><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-paste" aria-hidden="true"></i> Salvar
+                            </button>
+                        </div>
+                        <div class="col-md-4 "style="margin-top: 50px">
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

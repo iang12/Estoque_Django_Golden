@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+
+{%block conteudo%}
+<div class="login-box">
+
+    <div class="card">
+        <div class="card">
+                <div class="header">
+                    <h2>
+                      ADICIONAR USUARIOS
+                    
+                    </h2>
+                    
+                </div>
+                <div class="body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" id="username" class="form-control">
+                                <label class="form-label">Nome De Usuario</label>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="text" id="email" class="form-control">
+                                <label class="form-label">Nome De Usuario</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="password" id="password1" class="form-control">
+                                <label class="form-label">Senha</label>
+                            </div>
+                        </div>
+                         <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="password" id="password" class="form-control">
+                                <label class="form-label">Confirmação de Senha</label>
+                            </div>
+                        </div>
+
+                        
+                        <br>
+                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">SALVAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

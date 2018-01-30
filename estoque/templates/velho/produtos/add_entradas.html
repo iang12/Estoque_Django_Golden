@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title text-center"><i class="fa fa-plus"aria-hidden="true"></i> ENTRADA DE ESTOQUE</h3>
+	</div>
+	
+	<div class="panel-body">
+		<form action="" class="form-horizontal" method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="descricao" class="col-sm-2 control-label">{{form.categoria.label}} <i class="fa fa-pencil-square-o" aria-hidden="true"></i></label>
+				<div class="col-sm-4">
+					{{ form.categoria }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="titulo" class="col-sm-2 control-label">{{form.produto.label}}  <i class="fa fa-reorder" aria-hidden="true"></i></label>
+				
+				<div class="col-sm-4">
+				{{form.produto.errors}}
+					{{form.produto}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="valor" class="col-sm-2 control-label">{{form.fornecedor.label}}  <i class="fa fa-dollar" aria-hidden="true"></i></label>
+				<div class="col-sm-4">
+					{{form.fornecedor}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="forma_pagamento" class="col-sm-2 control-label">Quantidade <i class="fa fa-shopping-cart" aria-hidden="true"></i></label>
+				<div class="col-sm-4">
+					{{ form.qnt }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="forma_pagamento" class="col-sm-2 control-label">Observação <i class="fa fa-pencil" aria-hidden="true"></i></label>
+				<div class="col-sm-4">
+					{{ form.observacao }}
+				</div>
+			</div>
+				
+			<button type="submit" class="btn btn-primary">
+				<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Salvar
+			</button>
+			<a class="btn btn-success" href="/contas/pagar/"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Voltar</a>
+		</form>
+	</div>
+</div>
+{% endblock conteudo %}

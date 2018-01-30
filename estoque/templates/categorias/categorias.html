@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class=" display">Categorias <i class="fa fa-dedent" aria-hidden="true"></i></h2>
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-primary ml-auto p-2">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Adicionar
+                </button>
+        </div>
+        <div class="card-block">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Nª</th>
+                        <th> <i class="fa fa-th" aria-hidden="true"></i> NOME</th>
+                        <th><i class="fa fa-check" aria-hidden="true"></i> Nª DE PRODUTOS</th>
+                        <th> <i class="fa fa-calendar" aria-hidden="true"></i> DATA DE CADASTRO</th>
+                        <th> <i class="fa fa-cog" aria-hidden="true"></i> AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% include 'categorias/includes/lista_categoria.html' %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock conteudo %}

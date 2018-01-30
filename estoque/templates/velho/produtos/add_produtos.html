@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display"> <b>Adicionar Produtos</b></h2>
+        </div>
+        <div class="card-block">
+            <div class="container">
+                <form action="" class="form-horizontal" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.produto.label}}</label>
+                                {{form.produto}}
+                                {{form.produto.errors}}
+                            </div>
+                            </div>
+                         <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.preco_compra.label}}</label>
+                                {{form.preco_compra}}
+                                {{form.preco_compra.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.preco_venda.label}}</label>
+                                {{form.preco_venda}}
+                                {{form.preco_venda.errors}}
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.ipi.label}}</label>
+                                {{form.ipi.errors}}
+                                {{form.ipi}}
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.estoque.label}}</label>
+                                {{form.estoque}}
+                                {{form.estoque.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.estoque_min.label}}</label>
+                                {{form.estoque_min}}
+                                {{form.estoque_min.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.category.label}}</label>
+                                {{form.category}}
+                                {{form.category.errors}}
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                        <br>
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.importado.label}}</label>
+                                {{form.importado.errors}}
+                                {{form.importado}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.descricao.label}}</label>
+                                {{form.descricao}}
+                                {{form.descricao.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                        </div>
+                        <div class="col-md-3 "style="margin-top: 50px">
+                            <a class="btn btn-danger" href=""><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-paste" aria-hidden="true"></i> Salvar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery.noConflict();
+        jQuery(function($){
+           $("#id_cpf").mask("999.999.999-99");
+           $("#id_telefone").mask("(099) 9999-9999");
+           $("#id_nascimento").mask("99/99/9999");
+        });
+</script>
+{% endblock conteudo %}

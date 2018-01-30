@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class=" form card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display"><i class="fa fa-user-plus" aria-hidden="true"></i> Cadastro De Informações</h2>
+            <i style="margin-left: 680px;">Golden Store</i><img src="{% static "img/goden.jpg" %}"class="img-fluid rounded-circle"style="
+                position: absolute;
+                right: 11px;
+                width: 42px;
+                border: 1px solid ##FFC107;">
+        </div>
+        <div class="card-block">
+            <div class="container">
+                <form action=""  class=" form-horizontal " method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput"><b>{{form.clientes.label}}</b></label>
+                                {{form.clientes}}
+                            </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.tipo_servivo.label}}</b></label>
+                                {{form.tipo_servivo.errors}}
+                                {{form.tipo_servivo}}
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="row">
+                         <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.observacao.label}}</b></label>
+                                {{form.observacao}}
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.lista_produtos.label}}</b></label>
+                                {{form.lista_produtos}}
+                            </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.status_servico.label}}</b></label>
+                                {{form.status_servico.errors}}
+                                {{form.status_servico}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.data_entrega.label}}</b></label>
+                                {{form.data_entrega}}
+                            </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.data_emissao.label}}</b></label>
+                                {{form.data_emissao.errors}}
+                                {{form.data_emissao}}
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;<b><i class="fa fa-user" aria-hidden="true"></i> Assinatura Do Cliente:</b>
+                    </div>
+                    <hr>
+                    <div class="row">
+            <div class="col-md-4"></div>
+                <div class="col-md-6"style="margin-top: 30px">
+                   <button type="submit" class="btn btn-primary">Salvar
+                    </button>
+                    <a class="btn btn-danger" href=""><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+                     <button class="btn btn-info" id="create_pdf">Gerar PDF
+                    </button>
+                </div>
+            </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript"> 
+            jQuery.noConflict();
+            jQuery(function($){
+               $("#data_ini").datepicker({
+                language: 'pt-BR',
+                autoclose:true,
+                todayHighlight: true }
+                ).mask("99/99/9999");
+               $("#data_emissao").datepicker({
+                language: 'pt-BR',
+                weekStart: 0,
+                autoclose:true,
+                todayHighlight: true }
+                ).mask("99/99/9999");  
+            });
+        </script> 
+{% endblock conteudo %}
+{% block js_pdf %}
+   <script src="{% static "js/jspdf/jquery.min.js" %}">
+    </script>
+    <script type="text/javascript" src="{% static "js/jspdf/jspdf.min.js" %}">
+    </script>
+    <script type="text/javascript" src="{% static "js/jspdf/html2canvas.min.js" %}">
+    </script>
+
+    <script type="text/javascript" src="{% static "js/jspdf/app.js" %}">
+    </script>
+
+{% endblock js_pdf %}

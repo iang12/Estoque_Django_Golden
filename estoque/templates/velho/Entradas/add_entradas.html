@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display"><i class="fa fa-user-plus" aria-hidden="true"></i> Adicionar Estoque</h2>
+        </div>
+        <div class="card-block">
+            <div class="container">
+                <form action="" class="form-horizontal" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.categoria.label}}</label>
+                                {{form.categoria}}
+                            </div>
+                            </div>
+                        <div class="col-md-43">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.produto.label}}</label>
+                                {{form.produto.errors}}
+                                {{form.produto}}
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.quantidade.label}}</label>
+                                {{form.quantidade}}
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inlineFormInput" >{{form.observacao.label}}</label>
+                                {{form.observacao}}
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6"style="margin-top: 30px">
+                           <button type="submit" class="btn btn-primary">Salvar
+                            </button>
+                            <a class="btn btn-danger" href=""><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

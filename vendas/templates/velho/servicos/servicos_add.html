@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="col-lg-12">
+    <div class=" form card">
+        <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display"><i class="fa fa-user-plus" aria-hidden="true"></i> Cadastro De Servicos</h2>
+            <i style="margin-left: 720px;">Golden Store</i><img src="{% static "img/goden.jpg" %}"class="img-fluid rounded-circle"style="
+                position: absolute;
+                right: 11px;
+                width: 42px;
+                border: 1px solid ##FFC107;">
+        </div>
+        <div class="card-block">
+            <div class="container">
+                <form action=""  class=" form-horizontal " method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput"><b>{{form.nome.label}}</b></label>
+                                {{form.nome}}
+                            </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inlineFormInput" ><b>{{form.preco.label}}</b></label>
+                                {{form.preco.errors}}
+                                {{form.preco}}
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row">
+                    <div class="col-md-4"></div>
+                        <div class="col-md-6"style="margin-top: 30px">
+                            <button type="submit" class="btn btn-primary">Salvar
+                            </button>
+                            <a class="btn btn-danger" href=""><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

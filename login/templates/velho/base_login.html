@@ -1,0 +1,22 @@
+<!-- base.html -->
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/base.css'%}">
+    <link href=" {% static "css/bootstrap_login.css" %}"rel="stylesheet">
+	<link href=" {% static "css/font-awesome.min.css" %}"rel="stylesheet">
+</head> 
+<body>
+    <div class="wrapper">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

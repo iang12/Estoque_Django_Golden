@@ -1,0 +1,22 @@
+{% for p in produtos  %}
+<tr>
+	<td class="text-center">{{p.id}}</td>
+	<td class="text-center"><a href="">{{p.produto}}</a></td>
+	<th class="text-center">{{p.category}}</th>
+	<td class="text-center">{{p.estoque_min}}</td>
+	<td class="text-center">{{p.estoque}}</td>
+	<td class="text-center">{{p.preco_venda}} R$</td>
+	<td>
+		<a href="{% url "produto_update" p.id %}"type="button"class="btn btn-info btn-sm">
+            <i class="fa fa-pencil-square-o"aria-hidden="true"></i>
+        </a>
+        <a type="button"class="btn btn-danger btn-sm">
+            <i class="fa fa-trash"aria-hidden="true"></i>
+        </a>
+	</td>
+</tr>
+{% empty %}
+    <tr>
+        <td colspan="7" class="text-center bg-warning">Sem Produtos</td>
+    </tr>
+{% endfor %}
