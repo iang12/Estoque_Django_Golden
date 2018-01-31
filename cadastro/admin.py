@@ -4,6 +4,8 @@ from .models import Cliente
 
 class ClienteAdmin(admin.ModelAdmin):
     list_display = ('nome','cpf','sexo','telefone','instagran')
+    search_fields  = ('nome','cpf')
+
     icon = '<i class="material-icons">people_outline</i>'
 
 

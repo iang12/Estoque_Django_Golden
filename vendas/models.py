@@ -16,6 +16,7 @@ class Ordem_Servico(models.Model):
 	tipo_servivo  = models.CharField('Tipo Do Serviço',max_length=50)
 	data_entrega  = models.DateField('Data de entrega')
 	status_servico= models.CharField('Status Do Serviço',choices=STATUS, max_length=2,default='P')
+	numero_os     = models.CharField('Numero da Os',unique=True,max_length=6)
 	observacao    = models.TextField('Relatório')
 	data_emissao  = models.DateField('Data De Emissão')
 	def __str__(self):
